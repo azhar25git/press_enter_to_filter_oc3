@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+<name>Press Enter to Filter</name>
+<code>Press Enter to Filter</code>
+<version>1.0</version>
+<author>Azhar Uddin</author>
+<link>flybybiz@gmail.com</link>
+<file path="admin/view/template/catalog/*_list.twig">
+    <operation error="skip">
+        <search><![CDATA[{{ footer }}]]></search>
+        <add position="replace"><![CDATA[<script><!--
+$(document).on("keypress", function(event){
+  
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+  if(keycode == '13'){
+      $("#button-filter").trigger('click');
+  }
+    
+});
+//--></script>
+{{ footer }}]]></add>
+
+    </operation>
+</file>
+<file path="admin/view/template/sale/*_list.twig">
+    <operation error="skip">
+        <search><![CDATA[{{ footer }}]]></search>
+        <add position="replace"><![CDATA[<script><!--
+$(document).on("keypress", function(event){
+  
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+  if(keycode == '13'){
+      $("#button-filter").trigger('click');
+  }
+    
+});
+//--></script>
+{{ footer }}]]></add>
+
+    </operation>
+</file>
+
+<file path="admin/view/template/customer/*_list.twig">
+    <operation error="skip">
+        <search><![CDATA[{{ footer }}]]></search>
+        <add position="replace"><![CDATA[<script><!--
+$(document).on("keypress", function(event){
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+  if(keycode == '13'){
+      $("#button-filter").trigger('click');
+  }
+    
+});
+//--></script>
+{{ footer }}]]></add>
+
+    </operation>
+</file>
+
+</modification>
